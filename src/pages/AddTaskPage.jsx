@@ -4,7 +4,7 @@ const AddTaskPage = ({ isOpen, onClose, onAddTask }) => {
   const [taskData, setTaskData] = useState({
     title: "",
     description: "",
-    completed: "Pending",
+    completed: false,
   });
 
   // Function to handle form input changes
@@ -58,7 +58,7 @@ const AddTaskPage = ({ isOpen, onClose, onAddTask }) => {
               <label className="flex items-center text-sm">
                 <input
                   type="radio"
-                  name="status"
+                  name="completed"
                   value="Pending"
                   checked={taskData.completed === "Pending"}
                   onChange={handleChange}
@@ -69,7 +69,7 @@ const AddTaskPage = ({ isOpen, onClose, onAddTask }) => {
               <label className="flex items-center text-sm">
                 <input
                   type="radio"
-                  name="status"
+                  name="completed"
                   value="Completed"
                   checked={taskData.completed === "Completed"}
                   onChange={handleChange}
