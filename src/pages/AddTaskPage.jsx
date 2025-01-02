@@ -1,25 +1,26 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const AddTaskPage = ({ isOpen, onClose, onAddTask }) => {
   const [taskData, setTaskData] = useState({
     title: "",
     description: "",
-    completed: false,
+    completed: false, // Boolean value for task status
   });
 
   // Function to handle form input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     setTaskData((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: name === "completed" ? value === "true" : value, // Convert string "true"/"false" to boolean
     }));
   };
 
   // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAddTask(taskData);
+    onAddTask(taskData); // Send taskData to the parent component
     setTaskData({
       title: "",
       description: "",
@@ -59,8 +60,8 @@ const AddTaskPage = ({ isOpen, onClose, onAddTask }) => {
                 <input
                   type="radio"
                   name="completed"
-                  value="Pending"
-                  checked={taskData.completed === "Pending"}
+                  value="false"
+                  checked={!taskData.completed} // false corresponds to "Pending"
                   onChange={handleChange}
                   className="w-4 h-4 mr-1"
                 />
@@ -70,8 +71,8 @@ const AddTaskPage = ({ isOpen, onClose, onAddTask }) => {
                 <input
                   type="radio"
                   name="completed"
-                  value="Completed"
-                  checked={taskData.completed === "Completed"}
+                  value="true"
+                  checked={taskData.completed} // true corresponds to "Completed"
                   onChange={handleChange}
                   className="w-4 h-4 mr-1"
                 />
