@@ -31,8 +31,8 @@ Ensure you have the following installed:
 
 1. **Clone the Repository**:
    ```
-   git clone <repository-link>
-   cd to-do-list-manager
+   git clone <[repository-link](https://github.com/Aqib1239/ToDo_Manager.git)>
+   cd ToDo_Manager 
    ```
 
 2. **Install Dependencies**:
@@ -44,7 +44,7 @@ Ensure you have the following installed:
 
 3. **Start the Development Server**:
    ```
-   npm run dev
+   npm start
    # or
    yarn dev
    ```
@@ -100,7 +100,7 @@ to-do-list-manager/
 ## 📖 Version Control
 
 This project uses Git for version control. The latest code can be found at:
-- **Repository Link**: [GitHub Repository](<repository-link>)
+- **Repository Link**: [GitHub Repository](https://github.com/Aqib1239/ToDo_Manager)
 
 
 
