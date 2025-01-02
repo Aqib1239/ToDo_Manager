@@ -13,6 +13,7 @@ Responsive Design: Ensures seamless user experience across devices.
 State Management: Efficient handling of tasks using Redux Toolkit or Context API.
 REST API Integration: Fetch and update tasks using JSONPlaceholder's /todos endpoint.
 Reusable Components: Modular and maintainable React components.
+
 Task Pages:
 Home Page: Displays all tasks with title, description, and status.
 Add Task Page: Form to create new tasks.
@@ -23,10 +24,11 @@ Follow the steps below to run the project locally:
 Prerequisites
 Node.js: Version 16 or above.
 npm or yarn: For package management.
+
 Git: To clone the repository.
 Steps to Run the Project
-Clone the Repository:
 
+Clone the Repository:
 git clone <repository-link>
 cd to-do-list-manager
 Install Dependencies:
@@ -37,7 +39,7 @@ yarn install
 Start the Development Server:
 
 npm run dev
-# or
+ or 
 yarn dev
 Open in Browser: Navigate to http://localhost:3000 to view the application.
 
@@ -60,4 +62,4 @@ Base URL: https://jsonplaceholder.typicode.com
 Version Control:
 The project uses Git for version control. The latest codebase is available in the repository:
 
-Repository Link: GitHub Repository
+Repository Link: 
