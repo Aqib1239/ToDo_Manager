@@ -23,14 +23,14 @@ const EditTaskPage = ({ isOpen, onClose, taskToEdit, onEditTask }) => {
     const { name, value } = e.target;
     setTaskData((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: name === "completed" ? value === "true" : value, // Convert "true"/"false" to boolean
     }));
   };
 
   // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    onEditTask(taskData);
+    onEditTask(taskData); // Pass updated task data to parent component
     onClose();
   };
 
@@ -38,10 +38,10 @@ const EditTaskPage = ({ isOpen, onClose, taskToEdit, onEditTask }) => {
 
   return (
     <div
-      className={`fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 transition-opacity duration-300 `}
+      className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 transition-opacity duration-300"
     >
       <div
-        className={`bg-green-200 p-6 rounded-2xl w-96 shadow-lg transform transition-all duration-300 `}
+        className="bg-green-200 p-6 rounded-2xl w-96 shadow-lg transform transition-all duration-300"
       >
         <h1 className="text-2xl font-bold mb-4">Edit Task</h1>
         <form onSubmit={handleSubmit}>
@@ -73,8 +73,8 @@ const EditTaskPage = ({ isOpen, onClose, taskToEdit, onEditTask }) => {
                 <input
                   type="radio"
                   name="completed"
-                  value="Pending"
-                  checked={taskData.completed === "Pending"}
+                  value="false"
+                  checked={!taskData.completed} // false corresponds to "Pending"
                   onChange={handleChange}
                   className="w-4 h-4 mr-1"
                 />
@@ -84,8 +84,8 @@ const EditTaskPage = ({ isOpen, onClose, taskToEdit, onEditTask }) => {
                 <input
                   type="radio"
                   name="completed"
-                  value="Completed"
-                  checked={taskData.completed === "Completed"}
+                  value="true"
+                  checked={taskData.completed} // true corresponds to "Completed"
                   onChange={handleChange}
                   className="w-4 h-4 mr-1"
                 />
