@@ -31,7 +31,7 @@ Ensure you have the following installed:
 
 1. **Clone the Repository**:
    ```
-   git clone [repository-link](https://github.com/Aqib1239/ToDo_Manager.git)
+   git clone https://github.com/Aqib1239/ToDo_Manager.git
    cd ToDo_Manager 
    ```
 
